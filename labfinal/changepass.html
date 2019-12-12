@@ -1,0 +1,45 @@
+
+<html>
+<head> <title>change password</title> </head>
+<script>
+
+function f1()
+{
+	  var cpass = document.getElementById('currentpass').value;
+ var npass= document.getElementById('newpass').value;
+ var rpass= document.getElementById('"retypepass').value;
+ if( cpass=="" || npass=="" || rpass=="")
+{ document.getElementById('passdiv').innerHTML="null submission";}
+
+}
+
+
+</script>
+<body>
+<fieldset>
+<legend> Change Password </legend>
+ <table>
+<tr>
+<td> Current Password </td>
+<td> <input type="password" name="currentpass" id="currentpass">  </td>
+</tr>
+
+<tr>
+<td> New Password </td>
+<td> <input type="password" name="newpass" id="newpass">  </td>
+</tr>
+
+<tr>
+<td> Retype New Password </td>
+<td> <input type="password" name="retypepass" id="retypepass">  </td>
+</tr>
+<tr>
+<td> <input type="button" name= "changePass" value="change" onclick="f1()"> <a href="Home.php"> Go home </a> </td>
+<td> <div id="passdiv"> </div> </td>
+</tr>
+
+ </table>
+ 
+</fieldset>
+</body>
+</html>

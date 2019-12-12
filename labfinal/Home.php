@@ -16,7 +16,7 @@ if(isset($_SESSION['uid']))
 
 Welcome <?php echo $data['name'];?> ! <br>
 <a href="profile.php"> Profile </a> <br>
-<a href="changepass.php"> Change Password </a> <br>
+<a href="changepass.html"> Change Password </a> <br>
 <?php
 if($data['type']== "Admin")
 {

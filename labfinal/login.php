@@ -13,7 +13,7 @@ if(isset($_POST['uid']))
 	{
 		$_SESSION['uid']=$uid;
 		$_SESSION['pass']=$pass;
-		setcookie('uid',$uid,t+1000000,'/');
+		//setcookie('uid',$uid,t+1000000,'/');
 		
 		echo "true";}
 else
