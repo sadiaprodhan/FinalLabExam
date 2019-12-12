@@ -1,0 +1,68 @@
+
+
+<html>
+<head> <title> LOGIN</title> </head>
+<script>
+
+function f1()
+{
+	  var userid = document.getElementById('userid').value;
+ var pass= document.getElementById('password').value;
+ var remember= document.getElementById('remember').value.checked;
+ if( userid=="" || pass=="")
+{ document.getElementById('logindiv').innerHTML="null submission";}
+
+else
+{
+var xhttp = new XMLHttpRequest();
+				xhttp.open("POST", "login.php", true);
+				xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+				xhttp.send('uid='+userid+'&pass='+pass);
+			
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					if(this.responseText=="true")
+					{window.location.href='Home.php';}
+					 	else
+						{document.getElementById('logindiv').innerHTML = this.responseText;}					 
+					}};
+}}
+
+
+</script>
+
+<body>
+<form >
+
+<fieldset>
+<legend> <h1> LOGIN </h1> </legend>
+<table>
+<tr>
+<td>User Id </td>
+</tr>
+<tr>
+<td> <input type= "text" name= "uid" id="userid"> </td>
+</tr>
+<tr>
+<td> Password</td>
+</tr>
+<tr>
+<td> <input type= "password" name= "pass" id="password"> </td>
+</tr>
+<tr>
+<td> <input type="checkbox" name="remember" value="remember" id="remember"> Remember Me</td>
+</tr>
+<tr>
+<td> <input type= "button" name= "submit" value= "Login" onclick="f1()"> <a href="Registration.html"> Register </a> 
+<div id="logindiv"> </div> 
+
+</td>
+</tr>
+
+</table>
+</fieldset>
+
+</form>
+</body>
+
+</html>
